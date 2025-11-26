@@ -1,0 +1,1 @@
+web: python shrinkme_referrals_bot.py
