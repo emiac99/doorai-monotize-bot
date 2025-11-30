@@ -14,15 +14,15 @@ from telegram.ext import (
 )
 
 # --------- CONFIG (env vars; defaults provided) ----------
-BOT_TOKEN = os.getenv("BOT_TOKEN")                     # <-- set this on Render (your bot token)
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")                     # <-- set this on Render (your bot token)
 ADMIN_ID = int(os.getenv("ADMIN_ID", "8001485394"))    # you gave 8001485394
 DOMAIN = os.getenv("DOMAIN", "https://doorai-monotize-bot.onrender.com")
 SHRINK_API_KEY = os.getenv("SHRINK_API_KEY", "")       # set your ShrinkMe API key in Render
 REFERRAL_QUALIFY_CLICKS = int(os.getenv("REFERRAL_QUALIFY_CLICKS", "20"))
 DAILY_RESET_HOUR_UTC = int(os.getenv("DAILY_RESET_HOUR_UTC", "0"))  # not strictly used; reset checks date change
 
-if not BOT_TOKEN:
-    raise RuntimeError("BOT_TOKEN environment variable is required")
+if not TELEGRAM_TOKEN:
+    raise RuntimeError("TELEGRAM_TOKEN environment variable is required")
 
 logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
