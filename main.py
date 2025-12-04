@@ -338,3 +338,9 @@ async def _startup():
 
 # schedule startup task when module is imported by gunicorn
 asyncio.get_event_loop().create_task(_startup())
+import asyncio
+
+async def main():
+    await _startup()  # your existing startup function
+
+asyncio.run(main())
